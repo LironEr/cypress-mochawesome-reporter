@@ -4,6 +4,10 @@
   "description": "Zero config Mochawesome reporter for Cypress with screenshots",
   "author": "Liron Er",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LironEr/cypress-mochawesome-reporter"
+  },
   "main": "lib/reporter.js",
   "bin": {
     "generate-mochawesome-report": "bin/generate-report-cli.js"
