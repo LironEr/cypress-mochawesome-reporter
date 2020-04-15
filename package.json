@@ -1,0 +1,33 @@
+{
+  "name": "cypress-mochawesome-reporter",
+  "version": "0.0.1",
+  "description": "Zero config Mochawesome reporter for Cypress with screenshots",
+  "author": "Liron Er",
+  "license": "MIT",
+  "main": "lib/reporter.js",
+  "bin": {
+    "generate-mochawesome-report": "bin/generate-report-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mochawesome",
+    "mocha",
+    "reporter",
+    "cypress"
+  ],
+  "dependencies": {
+    "fs-extra": "^9.0.0",
+    "yargs": "^15.3.1",
+    "mocha": "^7.1.1",
+    "mochawesome": "^6.1.0",
+    "mochawesome-merge": "^4.0.3",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "register.js"
+  ]
+}
