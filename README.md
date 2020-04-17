@@ -1,5 +1,7 @@
 # cypress-mochawesome-reporter
 
+[![npm](https://img.shields.io/npm/v/cypress-mochawesome-reporter)](http://www.npmjs.com/package/cypress-mochawesome-reporter)
+
 Zero config Mochawesome reporter for Cypress with screenshots
 
 [Example report](https://lironer.github.io/cypress-mochawesome-reporter/example-report/mochawesome.html)
