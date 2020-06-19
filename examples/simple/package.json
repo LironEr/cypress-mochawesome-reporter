@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "serve -l 3333 site",
+    "cypress:open": "cypress open",
+    "precypress:run": "rm -rf cypress/screenshots cypress/results cypress/reports",
+    "cypress:run": "cypress run",
+    "cypress:report": "generate-mochawesome-report"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^4.4.0",
+    "cypress-mochawesome-reporter": "../../",
+    "serve": "^11.3.0"
+  }
+}

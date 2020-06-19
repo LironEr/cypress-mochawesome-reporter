@@ -11,10 +11,13 @@ Zero config Mochawesome reporter for Cypress with screenshots
 ## Setup
 
 1. install cypress-mochawesome-reporter
+
 ```
 npm i --save-dev cypress-mochawesome-reporter
 ```
+
 or
+
 ```
 yarn add -D cypress-mochawesome-reporter
 ```
@@ -22,20 +25,25 @@ yarn add -D cypress-mochawesome-reporter
 2. Change cypress reporter
 
 config file
+
 ```
   "reporter": "cypress-mochawesome-reporter"
 ```
+
 or command line
+
 ```
 --reporter cypress-mochawesome-reporter
 ```
 
 3. Add to `cypress/support/index.js`
+
 ```
 import 'cypress-mochawesome-reporter/register';
 ```
 
 4. add to your package.json scripts
+
 ```
 "cypress:report": "generate-mochawesome-report"
 ```
@@ -43,15 +51,20 @@ import 'cypress-mochawesome-reporter/register';
 5. run cypress and then `npm run cypress:report`
 
 ## CLI (generate-mochawesome-report) flags
-Flag | Type | Default | Description 
-:--- | :--- | :------ | :----------
---jsonDir | string | [cwd]/cypress/results/json | Cypress results json folder, should be the same as reportDir in cypress.json
---reportDir | string | [cwd]/cypress/screenshots | Cypress screenshots directory
--o, --output | string | [cwd]/cypress/reports/html | Path to save report
 
-## Run example project
+| Flag         | Type   | Default                    | Description                                                                  |
+| :----------- | :----- | :------------------------- | :--------------------------------------------------------------------------- |
+| --jsonDir    | string | [cwd]/cypress/results/json | Cypress results json folder, should be the same as reportDir in cypress.json |
+| --reportDir  | string | [cwd]/cypress/screenshots  | Cypress screenshots directory                                                |
+| -o, --output | string | [cwd]/cypress/reports/html | Path to save report                                                          |
+
+## Exmaples
+
+1. [Simple use of `cypress-mochawesome-reporter`](examples/simple)
+2. [Using `cypress-multi-reporters`](examples/multiple-reporters)
+
 ```
-cd example
+cd examples/<example-project>
 
 npm i
 npm run serve

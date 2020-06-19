@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://localhost:3333",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/results/junit/results-[hash].xml"
+    }
+  }
+}
