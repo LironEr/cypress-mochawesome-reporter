@@ -22,6 +22,11 @@ function getFullTestName(runnable) {
     item = item.parent;
   }
 
+  // Cypress will populate hookName in runnable when error was thrown in hook.
+  if (runnable.hookName) {
+    name.push(`${runnable.hookName} hook`);
+  }
+
   return name
     .filter(Boolean)
     .map((n) => n.trim())
