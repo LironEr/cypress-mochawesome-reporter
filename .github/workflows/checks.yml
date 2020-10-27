@@ -1,0 +1,26 @@
+name: Checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [synchronize, opened, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: cypress/included:5.4.0
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install examples dependencies
+        run: npm run install-examples
+
+      - name: Run examples (prepare tests)
+        run: npm run test:prepare || true
+
+      - name: Tests
+        run: npm run test
