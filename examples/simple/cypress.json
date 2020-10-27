@@ -1,7 +1,5 @@
 {
   "baseUrl": "http://localhost:3333",
   "reporter": "cypress-mochawesome-reporter",
-  "reporterOptions": {
-    "charts": true
-  }
+  "video": false
 }

@@ -6,5 +6,6 @@
     "mochaJunitReporterReporterOptions": {
       "mochaFile": "cypress/results/junit/results-[hash].xml"
     }
-  }
+  },
+  "video": false
 }
