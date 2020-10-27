@@ -16,7 +16,11 @@
     "generate-mochawesome-report": "bin/generate-report-cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lerna": "lerna",
+    "test:prepare": "lerna bootstrap && lerna run --no-bail --scope @example/* serve-test-report",
+    "test:run": "cypress run",
+    "test:open": "cypress open",
+    "prepare-run-test": "npm run test:prepare ; npm run test:run"
   },
   "keywords": [
     "mochawesome",
@@ -26,15 +30,19 @@
   ],
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "yargs": "^15.3.1",
     "mocha": "^7.1.1",
     "mochawesome": "^6.1.0",
     "mochawesome-merge": "^4.0.3",
-    "mochawesome-report-generator": "^5.1.0"
+    "mochawesome-report-generator": "^5.1.0",
+    "yargs": "^15.3.1"
   },
   "files": [
     "bin",
     "lib",
     "register.js"
-  ]
+  ],
+  "devDependencies": {
+    "cypress": "^5.4.0",
+    "lerna": "^3.22.1"
+  }
 }

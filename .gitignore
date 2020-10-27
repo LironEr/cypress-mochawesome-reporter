@@ -3,3 +3,8 @@ node_modules
 *.log
 .DS_Store
 .npmrc
+examples/*/package-lock.json
+cypress/reports
+cypress/results
+cypress/screenshots
+cypress/videos
