@@ -7,9 +7,9 @@ on:
     types: [synchronize, opened, reopened]
 
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
-    container: cypress/included:5.4.0
+    container: cypress/included:5.5.0
     steps:
       - uses: actions/checkout@v2
 
