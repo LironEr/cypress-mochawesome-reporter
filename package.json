@@ -19,8 +19,7 @@
     "lerna": "lerna",
     "test:prepare": "lerna bootstrap && lerna run --no-bail --scope @example/* serve-test-report",
     "test:run": "cypress run",
-    "test:open": "cypress open",
-    "prepare-run-test": "npm run test:prepare ; npm run test:run"
+    "test:open": "cypress open"
   },
   "keywords": [
     "mochawesome",
