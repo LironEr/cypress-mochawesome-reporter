@@ -1,5 +1,5 @@
 describe('Report output', () => {
-  ['simple', 'multiple-reporters'].forEach((folder) => {
+  ['simple', 'multiple-reporters', 'mochawesome-cli-flags'].forEach((folder) => {
     describe(`${folder} folder`, () => {
       beforeEach(() => {
         cy.visit(`examples/${folder}/cypress/reports/html/mochawesome.html`);
