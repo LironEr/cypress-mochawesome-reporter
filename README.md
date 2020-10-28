@@ -59,10 +59,13 @@ import 'cypress-mochawesome-reporter/register';
 | --screenshotsDir | string | [cwd]/cypress/screenshots  | Cypress screenshots directory                                                |
 | -o, --output     | string | [cwd]/cypress/reports/html | Path to save report                                                          |
 
+You can also pass [mochawesome-report-generator CLI flags](https://github.com/adamgruber/mochawesome-report-generator#cli-flags)
+
 ## Exmaples
 
 1. [Simple use of `cypress-mochawesome-reporter`](examples/simple)
 2. [Using `cypress-multi-reporters`](examples/multiple-reporters)
+3. [With `mochawesome-report-generator` CLI flags](examples/simple)
 
 ```
 cd examples/<example-project>
