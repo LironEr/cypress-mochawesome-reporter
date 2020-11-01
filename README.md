@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/cypress-mochawesome-reporter)](http://www.npmjs.com/package/cypress-mochawesome-reporter)
 [![node](https://img.shields.io/node/v/cypress-mochawesome-reporter.svg)](https://github.com/LironEr/cypress-mochawesome-reporter)
 
-Zero config Mochawesome reporter for Cypress with screenshots
+Zero config Mochawesome reporter for Cypress with screenshots attached to failed tests.
 
 [Example report](https://lironer.github.io/cypress-mochawesome-reporter/example-report/mochawesome.html)
 
