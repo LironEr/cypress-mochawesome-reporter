@@ -1,35 +1,24 @@
+/// <reference types="cypress" />
 const addContext = require('mochawesome/addContext');
 
-// https://github.com/cypress-io/cypress/blob/master/packages/server/lib/screenshots.coffee#L285
-const MAX_TEST_NAME_LENGTH = 220;
+const screenShotsFolder = Cypress.config('screenshotsFolder');
 
-Cypress.on('test:after:run', (test, runnable) => {
-  if (test.state === 'failed') {
-    const fullTestName = getFullTestName(runnable);
+Cypress.Screenshot.defaults({
+  onAfterScreenshot(_el, details) {
+    if (!details.path) {
+      return;
+    }
 
-    const imagePath = `screenshots/${Cypress.spec.name}/${fullTestName} (failed).png`;
+    cy.once('test:after:run', (test) => {
+      const normalizedScreenshotPath = 'screenshots' + details.path.replace(screenShotsFolder, '');
 
-    addContext({ test }, imagePath);
-  }
+      addContext(
+        { test },
+        {
+          title: normalizedScreenshotPath.includes('(failed)') ? 'Failed screenshot' : 'Screenshot',
+          value: normalizedScreenshotPath,
+        }
+      );
+    });
+  },
 });
-
-function getFullTestName(runnable) {
-  let item = runnable;
-  const name = [runnable.title];
-
-  while (item.parent) {
-    name.unshift(item.parent.title);
-    item = item.parent;
-  }
-
-  // Cypress will populate hookName in runnable when error was thrown in hook.
-  if (runnable.hookName) {
-    name.push(`${runnable.hookName} hook`);
-  }
-
-  return name
-    .filter(Boolean)
-    .map((n) => n.trim())
-    .join(' -- ')
-    .substring(0, MAX_TEST_NAME_LENGTH);
-}

@@ -1,14 +1,17 @@
-Cypress.Commands.add('validateTestHasScreenshot', (testTitle) => {
+Cypress.Commands.add('validateTestHasScreenshot', (testTitle, numberOfScreenshots = 1) => {
   cy.get(`[title="${testTitle}"]`)
     .click()
     .parents('li[class*="test--component"]')
     .then(([$el]) => {
       cy.wrap($el)
         .find('img')
-        .should('be.visible')
-        .and(($img) => {
-          // "naturalWidth" and "naturalHeight" are set when the image loads
-          expect($img[0].naturalWidth, 'image has natural width').to.be.greaterThan(0);
+        .then(($imgs) => {
+          cy.wrap($imgs)
+            .should('have.length', numberOfScreenshots)
+            .each(([$img]) => {
+              // "naturalWidth" and "naturalHeight" are set when the image loads
+              expect($img.naturalWidth, 'image has natural width').to.be.greaterThan(0);
+            });
         });
     });
 });

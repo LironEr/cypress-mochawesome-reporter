@@ -14,8 +14,12 @@ describe('Report output', () => {
       });
 
       describe('Validate image exists', () => {
+        it('screenshot of passed test', () => {
+          cy.validateTestHasScreenshot('default todos exists');
+        });
+
         it('fail during test', () => {
-          cy.validateTestHasScreenshot('fail test');
+          cy.validateTestHasScreenshot('fail test', 2);
         });
 
         it('before hook', () => {
