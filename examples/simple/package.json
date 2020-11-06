@@ -2,18 +2,15 @@
   "name": "@example/simple",
   "version": "1.0.0",
   "scripts": {
-    "serve": "serve -l 3333 site",
     "cypress:open": "cypress open",
     "precypress:run": "rm -rf cypress/screenshots cypress/results cypress/reports",
     "cypress:run": "cypress run",
     "cypress:report": "generate-mochawesome-report",
-    "serve-test-report": "concurrently --kill-others \"npm run serve\" \"npm run cypress:run ; npm run cypress:report\""
+    "test-and-report": "npm run cypress:run ; npm run cypress:report"
   },
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^5.3.0",
     "cypress": "^5.5.0",
-    "cypress-mochawesome-reporter": "../../",
-    "serve": "^11.3.0"
+    "cypress-mochawesome-reporter": "../../"
   }
 }

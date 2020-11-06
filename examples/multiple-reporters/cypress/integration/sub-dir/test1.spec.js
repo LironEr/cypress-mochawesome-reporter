@@ -1,6 +1,6 @@
 describe('Test 1', () => {
   it('default todos exists', () => {
-    cy.visit('/');
+    cy.visit('site/index.html');
 
     cy.get('#todo-list li').should('have.length', 4);
 
@@ -8,7 +8,7 @@ describe('Test 1', () => {
   });
 
   it('fail test', () => {
-    cy.visit('/');
+    cy.visit('site/index.html');
 
     cy.screenshot('custom-name');
 

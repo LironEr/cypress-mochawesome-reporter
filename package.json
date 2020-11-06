@@ -18,7 +18,7 @@
   "scripts": {
     "lerna": "lerna",
     "install-examples": "lerna exec --scope @example/* \"npm i\"",
-    "test:prepare": "lerna run --stream --no-bail --concurrency 1 --scope @example/* serve-test-report",
+    "test:prepare": "lerna run --stream --no-bail --concurrency 2 --scope @example/* test-and-report",
     "test": "cypress run",
     "cypress:open": "cypress open"
   },
