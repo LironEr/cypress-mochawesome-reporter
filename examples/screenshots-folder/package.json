@@ -1,0 +1,16 @@
+{
+  "name": "@example/screenshots-folder",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "precypress:run": "rm -rf cypress/images cypress/results cypress/reports",
+    "cypress:run": "cypress run",
+    "cypress:report": "generate-mochawesome-report --screenshotsDir images",
+    "test-and-report": "npm run cypress:run ; npm run cypress:report"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^5.5.0",
+    "cypress-mochawesome-reporter": "../../"
+  }
+}
