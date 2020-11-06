@@ -1,0 +1,5 @@
+{
+  "reporter": "cypress-mochawesome-reporter",
+  "video": false,
+  "screenshotsFolder": "images"
+}

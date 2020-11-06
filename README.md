@@ -65,7 +65,8 @@ You can also pass [mochawesome-report-generator CLI flags](https://github.com/ad
 
 1. [Simple use of `cypress-mochawesome-reporter`](examples/simple)
 2. [Using `cypress-multi-reporters`](examples/multiple-reporters)
-3. [With `mochawesome-report-generator` CLI flags](examples/simple)
+3. [With `mochawesome-report-generator` CLI flags](examples/mochawesome-cli-flags)
+4. [Change default screenshots folder in `cypress.json`](examples/screenshots-folder)
 
 ```
 cd examples/<example-project>
