@@ -1,28 +1,27 @@
 #!/usr/bin/env node
 
-const path = require('path');
 const yargs = require('yargs');
 
 const args = yargs
   .options({
-    jsonDir: {
+    cypressConfig: {
+      alias: 'c',
       type: 'string',
-      default: 'cypress/results/json',
-      describe: 'Cypress results json folder, should be the same as reportDir in cypress.json',
-      coerce: path.resolve,
-    },
-    screenshotsDir: {
-      type: 'string',
-      default: 'cypress/screenshots',
-      describe: 'Cypress screenshots directory',
-      coerce: path.resolve,
+      default: 'cypress.json',
+      describe: 'cypress.json path',
     },
     output: {
       alias: 'o',
       type: 'string',
-      default: 'cypress/reports/html',
       describe: 'Path to save report',
-      coerce: path.resolve,
+    },
+    jsonDir: {
+      type: 'string',
+      describe: 'Cypress results json folder, should be the same as reportDir in cypress.json',
+    },
+    screenshotsDir: {
+      type: 'string',
+      describe: 'Cypress screenshots folder, should be the same as screenshotsFolder in cypress.json',
     },
   })
   .help('help')

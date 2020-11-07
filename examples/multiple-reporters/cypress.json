@@ -4,6 +4,9 @@
     "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
     "mochaJunitReporterReporterOptions": {
       "mochaFile": "cypress/results/junit/results-[hash].xml"
+    },
+    "cypressMochawesomeReporterReporterOptions": {
+      "charts": true
     }
   },
   "video": false
