@@ -53,11 +53,12 @@ import 'cypress-mochawesome-reporter/register';
 
 ## CLI (generate-mochawesome-report) flags
 
-| Flag             | Type   | Default                    | Description                                                                  |
-| :--------------- | :----- | :------------------------- | :--------------------------------------------------------------------------- |
-| --jsonDir        | string | [cwd]/cypress/results/json | Cypress results json folder, should be the same as reportDir in cypress.json |
-| --screenshotsDir | string | [cwd]/cypress/screenshots  | Cypress screenshots directory                                                |
-| -o, --output     | string | [cwd]/cypress/reports/html | Path to save report                                                          |
+| Flag                | Type   | Default                    | Description                                                                         |
+| :------------------ | :----- | :------------------------- | :---------------------------------------------------------------------------------- |
+| -c, --cypressConfig | string | [cwd]/cypress.json         | cypress.json file path                                                              |
+| -o, --output        | string | [cwd]/cypress/reports/html | Path to save report                                                                 |
+| --jsonDir           | string | [cwd]/cypress/results/json | Cypress results json folder, should be the same as reportDir in cypress.json        |
+| --screenshotsDir    | string | [cwd]/cypress/screenshots  | Cypress screenshots folder, should be the same as screenshotsFolder in cypress.json |
 
 You can also pass [mochawesome-report-generator CLI flags](https://github.com/adamgruber/mochawesome-report-generator#cli-flags)
 

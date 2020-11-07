@@ -5,7 +5,7 @@
     "cypress:open": "cypress open",
     "precypress:run": "rm -rf cypress/images cypress/results cypress/reports",
     "cypress:run": "cypress run",
-    "cypress:report": "generate-mochawesome-report --screenshotsDir images",
+    "cypress:report": "generate-mochawesome-report",
     "test-and-report": "npm run cypress:run ; npm run cypress:report"
   },
   "license": "MIT",
