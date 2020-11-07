@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const yargs = require('yargs');
 
 const args = yargs
@@ -9,6 +10,7 @@ const args = yargs
       type: 'string',
       default: 'cypress.json',
       describe: 'cypress.json path',
+      coerce: path.resolve,
     },
     output: {
       alias: 'o',
