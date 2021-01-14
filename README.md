@@ -27,7 +27,7 @@ yarn add -D cypress-mochawesome-reporter
 
 2. Change cypress reporter
 
-config file
+config file (`cypress.json` by default)
 
 ```
   "reporter": "cypress-mochawesome-reporter"
