@@ -27,7 +27,7 @@ yarn add -D cypress-mochawesome-reporter
 
 2. Change cypress reporter
 
-config file
+config file (`cypress.json` by default)
 
 ```
   "reporter": "cypress-mochawesome-reporter"
@@ -64,7 +64,7 @@ import 'cypress-mochawesome-reporter/register';
 
 You can also pass [mochawesome-report-generator CLI flags](https://github.com/adamgruber/mochawesome-report-generator#cli-flags)
 
-## Exmaples
+## Examples
 
 1. [Simple use of `cypress-mochawesome-reporter`](examples/simple)
 2. [Using `cypress-multi-reporters`](examples/multiple-reporters)
