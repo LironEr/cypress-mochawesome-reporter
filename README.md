@@ -75,7 +75,6 @@ You can also pass [mochawesome-report-generator CLI flags](https://github.com/ad
 cd examples/<example-project>
 
 npm i
-npm run serve
 npm run cypress:run
 npm run cypress:report
 ```
