@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "cypress:open": "cypress open",
-    "precypress:run": "rm -rf cypress/images cypress/results cypress/reports",
-    "cypress:run": "cypress run",
-    "cypress:report": "generate-mochawesome-report",
-    "test-and-report": "npm run cypress:run ; npm run cypress:report"
+    "test": "cypress run"
   },
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^5.5.0",
+    "cypress": "^6.8.0",
     "cypress-mochawesome-reporter": "../../"
   }
 }

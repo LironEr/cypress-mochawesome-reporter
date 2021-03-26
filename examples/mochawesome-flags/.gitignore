@@ -1,5 +1,4 @@
 node_modules
-cypress/reports
-cypress/results
+test-report
 cypress/screenshots
 cypress/videos
