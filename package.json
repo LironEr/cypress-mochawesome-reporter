@@ -27,7 +27,6 @@
   ],
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "mocha": "^7.1.1",
     "mochawesome": "^6.1.0",
     "mochawesome-merge": "^4.0.3",
     "mochawesome-report-generator": "^5.1.0"
