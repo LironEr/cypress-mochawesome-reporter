@@ -1,5 +1,5 @@
 {
-  "name": "@example/simple",
+  "name": "@example/mochawesome-flags",
   "version": "1.0.0",
   "scripts": {
     "cypress:open": "cypress open",
