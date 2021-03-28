@@ -1,8 +1,12 @@
 describe('Report output', () => {
-  ['simple', 'multiple-reporters', 'mochawesome-cli-flags', 'screenshots-folder'].forEach((folder) => {
+  ['simple', 'multiple-reporters', 'mochawesome-flags', 'screenshots-folder'].forEach((folder) => {
     describe(`${folder} folder`, () => {
       beforeEach(() => {
-        cy.visit(`examples/${folder}/cypress/reports/html/index.html`);
+        if (folder === 'mochawesome-flags') {
+          cy.visit(`examples/${folder}/test-report/index.html`);
+        } else {
+          cy.visit(`examples/${folder}/cypress/reports/html/index.html`);
+        }
       });
 
       it('Validate all tests exists', () => {

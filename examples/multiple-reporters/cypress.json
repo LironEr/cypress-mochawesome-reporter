@@ -3,10 +3,11 @@
   "reporterOptions": {
     "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
     "mochaJunitReporterReporterOptions": {
-      "mochaFile": "cypress/results/junit/results-[hash].xml"
+      "mochaFile": "cypress/reports/junit/results-[hash].xml"
     },
     "cypressMochawesomeReporterReporterOptions": {
-      "charts": true
+      "charts": true,
+      "reportPageTitle": "custom-title"
     }
   },
   "video": false

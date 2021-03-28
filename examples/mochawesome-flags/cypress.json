@@ -1,0 +1,9 @@
+{
+  "reporter": "cypress-mochawesome-reporter",
+  "video": false,
+  "reporterOptions": {
+    "reportDir": "test-report",
+    "charts": true,
+    "reportPageTitle": "custom-title"
+  }
+}
