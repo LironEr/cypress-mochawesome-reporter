@@ -4,7 +4,7 @@ const { getSimpleCypressConfig } = require('./lib/utils');
 
 module.exports = function (on) {
   on('before:run', async (details) => {
-    const { outputDir } = getSimpleCypressConfig(details.config);
+    const { outputDir } = await getSimpleCypressConfig(details.config);
     console.log(`Remove output folder ${outputDir}`);
 
     await fse.remove(outputDir);

@@ -1,5 +1,5 @@
 describe('Report output with mochawesome flags', () => {
-  ['multiple-reporters', 'mochawesome-flags'].forEach((folder) => {
+  ['multiple-reporters', 'multiple-reporters-config-file', 'mochawesome-flags'].forEach((folder) => {
     describe(`${folder} folder`, () => {
       beforeEach(() => {
         if (folder === 'mochawesome-flags') {
