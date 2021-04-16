@@ -15,7 +15,7 @@
   "scripts": {
     "lerna": "lerna",
     "install-examples": "lerna exec --scope @example/* \"npm i\"",
-    "test:prepare": "lerna run --stream --no-bail --concurrency 2 --scope @example/* test",
+    "test:prepare": "lerna run --stream --no-bail --concurrency 1 --scope @example/* test",
     "test": "cypress run",
     "cypress:open": "cypress open"
   },
@@ -32,8 +32,8 @@
     "mochawesome-report-generator": "^5.1.0"
   },
   "devDependencies": {
-    "cypress": "^6.8.0",
-    "lerna": "^3.22.1"
+    "cypress": "^7.1.0",
+    "lerna": "^4.0.0"
   },
   "peerDependencies": {
     "cypress": ">=6.2.0"

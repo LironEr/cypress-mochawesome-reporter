@@ -9,8 +9,12 @@ Cypress.Commands.add('validateTestHasScreenshot', (testTitle, numberOfScreenshot
           cy.wrap($imgs)
             .should('have.length', numberOfScreenshots)
             .each(([$img]) => {
-              // "naturalWidth" and "naturalHeight" are set when the image loads
-              expect($img.naturalWidth, 'image has natural width').to.be.greaterThan(0);
+              cy.wrap($img)
+                .should('be.visible')
+                .and(($img) => {
+                  // "naturalWidth" and "naturalHeight" are set when the image loads
+                  expect($img.naturalWidth, 'image has natural width').to.be.greaterThan(0);
+                });
             });
         });
     });
