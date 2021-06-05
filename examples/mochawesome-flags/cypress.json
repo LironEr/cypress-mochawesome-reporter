@@ -4,6 +4,8 @@
   "reporterOptions": {
     "reportDir": "test-report",
     "charts": true,
-    "reportPageTitle": "custom-title"
+    "reportPageTitle": "custom-title",
+    "embeddedScreenshots": true,
+    "inlineAssets": true
   }
 }
