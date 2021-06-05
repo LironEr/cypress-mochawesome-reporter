@@ -75,7 +75,7 @@ If you want to customize your HTML report with [mochawesome-report-generator fla
     "reportDir": "cypress/report",
     "charts": true,
     "reportPageTitle": "custom-title",
-    "embeddedScreenshots": true // embedded external screenshots into HTML using base64, use with inlineAssets option to produces a single HTML file
+    "embeddedScreenshots": true // embedded external screenshots into HTML using base64, use with inlineAssets option to produce a single HTML file
   }
 }
 ```
