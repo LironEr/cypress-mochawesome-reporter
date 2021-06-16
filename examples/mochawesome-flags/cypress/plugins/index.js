@@ -6,8 +6,8 @@ module.exports = (on) => {
     await beforeRunHook(details);
   });
 
-  on('after:run', async (results) => {
+  on('after:run', async () => {
     console.log('override after:run');
-    await afterRunHook(results);
+    await afterRunHook();
   });
 };
