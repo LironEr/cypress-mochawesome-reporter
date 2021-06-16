@@ -17,4 +17,9 @@ assignees: ''
 Please run this command inside your project and paste its contents here (it automatically copies to your clipboard)
 `npx envinfo --system --binaries --markdown | npx clipboard-cli`
 
+`cypress.json`:
+```
+<please add cypress.json and reporter-config.json if used>
+```
+
 **Additional context**
