@@ -73,9 +73,9 @@ module.exports = (on) => {
     await beforeRunHook(details);
   });
 
-  on('after:run', async (results) => {
+  on('after:run', async () => {
     console.log('override after:run');
-    await afterRunHook(results);
+    await afterRunHook();
   });
 };
 ```
@@ -92,11 +92,17 @@ If you want to customize your HTML report with [mochawesome-report-generator fla
   "reporterOptions": {
     "reportDir": "cypress/report",
     "charts": true,
-    "reportPageTitle": "custom-title",
-    "embeddedScreenshots": true // embedded external screenshots into HTML using base64, use with inlineAssets option to produce a single HTML file
+    "reportPageTitle": "custom-title"
   }
 }
 ```
+
+Additional reporter options:
+
+| name                  | type      | default | description                                                                                                      |
+| --------------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
+| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with inlineAssets option to produce a single HTML file |
+| `quiet`               | `boolean` | `false` | Silence console messages                                                                                         |
 
 ## Examples
 
