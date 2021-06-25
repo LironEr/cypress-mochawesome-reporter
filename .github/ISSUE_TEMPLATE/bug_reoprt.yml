@@ -6,25 +6,21 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: reporter-version
+  - type: textarea
     attributes:
-      label: `cypress-mochawesome-reporter` version
-      placeholder: 2.2.0
-    validations:
-      required: true
-  - type: input
-    id: cypress-version
-    attributes:
-      label: `cypress` version
-      placeholder: 7.6.0
-    validations:
-      required: true
-  - type: input
-    id: node-version
-    attributes:
-      label: `node` version
-      placeholder: 14.17.1
+      label: Environment
+      description: |
+        examples:
+          - **OS**: Ubuntu 20.04
+          - **Node**: 13.14.0
+          - **cypress-mochawesome-reporter**: 2.2.0
+          - **cypress**: 7.6.0
+      value: |
+          - OS: 
+          - Node: 
+          - cypress-mochawesome-reporter: 
+          - cypress: 
+      render: markdown
     validations:
       required: true
   - type: textarea
@@ -38,7 +34,7 @@ body:
     id: cypress-config
     attributes:
       label: Config file
-      description: Please add your `cypress.json` and `reporter-config.json` if used
+      description: Please add your cypress.json and reporter-config.json if used
       render: json
     validations:
       required: true
@@ -47,6 +43,7 @@ body:
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output
+      render: shell
   - type: textarea
     id: additional-info
     attributes:
