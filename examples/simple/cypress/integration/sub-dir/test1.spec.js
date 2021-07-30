@@ -14,4 +14,14 @@ describe('Test 1', () => {
 
     cy.get('#todo-list li').should('have.length', 10);
   });
+
+  describe('hierarchy', () => {
+    it('fail test hierarchy', () => {
+      cy.visit('site/index.html');
+  
+      cy.screenshot('custom-name2');
+  
+      cy.get('#todo-list li').should('have.length', 10);
+    });
+  });
 });
