@@ -1,6 +1,6 @@
 {
   "name": "cypress-mochawesome-reporter",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Zero config Mochawesome reporter for Cypress with screenshots",
   "engines": {
     "node": ">=10"
@@ -20,10 +20,11 @@
     "cypress:open": "cypress open"
   },
   "keywords": [
+    "cypress",
     "mochawesome",
     "mocha",
     "reporter",
-    "cypress"
+    "screenshot"
   ],
   "dependencies": {
     "fs-extra": "^9.0.0",

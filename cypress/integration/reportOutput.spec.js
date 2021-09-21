@@ -24,16 +24,16 @@ describe('Report output', () => {
           });
 
           it('fail during test', () => {
-            cy.validateTestHasScreenshot('fail test', 2);
-            cy.validateTestHasScreenshot('fail test hierarchy', 2);
+            cy.validateTestHasScreenshot('fail test', folder === 'simple' ? 4 : 2);
+            cy.validateTestHasScreenshot('fail test hierarchy', folder === 'simple' ? 4 : 2);
           });
 
           it('before hook', () => {
-            cy.validateTestHasScreenshot('before hook fail');
+            cy.validateTestHasScreenshot('before hook fail', 1);
           });
 
           it('beforeEach', () => {
-            cy.validateTestHasScreenshot('beforeEach hook fail 1');
+            cy.validateTestHasScreenshot('beforeEach hook fail 1', folder === 'simple' ? 2 : 1);
           });
         });
       });
