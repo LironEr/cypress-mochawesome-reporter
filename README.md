@@ -99,10 +99,11 @@ If you want to customize your HTML report with [mochawesome-report-generator fla
 
 Additional reporter options:
 
-| name                  | type      | default | description                                                                                                      |
-| --------------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
-| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with inlineAssets option to produce a single HTML file |
-| `quiet`               | `boolean` | `false` | Silence console messages                                                                                         |
+| name                  | type      | default | description                                                                                                        |
+| --------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file |
+| `quiet`               | `boolean` | `false` | Silence console messages                                                                                           |
+| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
 
 ## Examples
 
