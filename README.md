@@ -13,10 +13,11 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
 
 ## Cypress compatibility
 
-| reporter version | cypress version                                                | reporter branch                                                         |
-| ---------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `v2`             | >= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | `master`                                                                |
-| `v1`             | >= `4.0.0`                                                     | [`v1`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v1) |
+| reporter version | cypress version                                                               | reporter branch                                                         |
+| ---------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `v3`             | node >= 14<br/>>= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | `master`                                                                |
+| `v2`             | >= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true`                | [`v2`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v2) |
+| `v1`             | >= `4.0.0`                                                                    | [`v1`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v1) |
 
 [migration guide from `v1` to `v2`](./migration.md)
 
