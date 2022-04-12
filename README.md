@@ -114,6 +114,8 @@ Additional reporter options:
 3. [With `mochawesome-report-generator` flags](examples/mochawesome-flags)
 4. [Change default screenshots folder in `cypress.json`](examples/screenshots-folder)
 
+Run `npm i` in root directory then:
+
 ```
 cd examples/<example-project>
 
