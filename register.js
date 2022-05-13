@@ -26,8 +26,20 @@ Cypress.on('test:after:run', (test) => {
       }
     );
 
+    Cypress.Mochawesome.context.forEach((ctx) => {
+      addContext({ test }, ctx);
+    });
+
     Cypress.Mochawesome = undefined;
   }
+});
+
+Cypress.Commands.add('addTestContext', (context) => {
+  if (!Cypress.Mochawesome) {
+    Cypress.Mochawesome = createMochawesomeObject();
+  }
+
+  Cypress.Mochawesome.context.push(context);
 });
 
 function saveScreenshotReference(details) {
@@ -36,11 +48,16 @@ function saveScreenshotReference(details) {
   const title = normalizedScreenshotPath.includes('(failed)') ? 'Failed screenshot' : 'Screenshot';
 
   if (!Cypress.Mochawesome) {
-    Cypress.Mochawesome = {
-      currentAttemptScreenshots: [],
-      attempts: [],
-    };
+    Cypress.Mochawesome = createMochawesomeObject();
   }
 
   Cypress.Mochawesome.currentAttemptScreenshots.push({ title, value: normalizedScreenshotPath });
+}
+
+function createMochawesomeObject() {
+  return {
+    currentAttemptScreenshots: [],
+    attempts: [],
+    context: [],
+  };
 }
