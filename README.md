@@ -23,6 +23,8 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
 
 ## Setup
 
+> This setup tutorial works with Cypress >= v10, looking for older version setup? [here](https://github.com/LironEr/cypress-mochawesome-reporter/blob/9c11e7005351e8750fe48b90d010c9bf29539956/README.md#setup)
+
 1. install cypress-mochawesome-reporter
 
 ```
@@ -35,50 +37,51 @@ or
 yarn add -D cypress-mochawesome-reporter
 ```
 
-2. Change cypress reporter
+2. Change cypress reporter & setup hooks
 
-config file (`cypress.json` by default)
+config file (`cypress.config.js` by default)
 
+```js
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
+  },
+});
 ```
-  "reporter": "cypress-mochawesome-reporter"
+
+If you are override `before:run` or `after:run` hooks, use this:
+
+```js
+const { defineConfig } = require('cypress');
+const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  e2e: {
+    setupNodeEvents(on, config) {
+      on('before:run', async (details) => {
+        console.log('override before:run');
+        await beforeRunHook(details);
+      });
+
+      on('after:run', async () => {
+        console.log('override after:run');
+        await afterRunHook();
+      });
+    },
+  },
+});
 ```
 
-or command line
-
-```
---reporter cypress-mochawesome-reporter
-```
-
-3. Add to `cypress/support/index.js`
+3. Add to `cypress/support/e2e.js`
 
 ```javascript
 import 'cypress-mochawesome-reporter/register';
-```
-
-4. Add to `cypress/plugins/index.js`
-
-```javascript
-module.exports = (on, config) => {
-  require('cypress-mochawesome-reporter/plugin')(on);
-};
-```
-
-or (`cypress-mochawesome-reporter` >= `2.2.0`)
-
-```javascript
-const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
-
-module.exports = (on) => {
-  on('before:run', async (details) => {
-    console.log('override before:run');
-    await beforeRunHook(details);
-  });
-
-  on('after:run', async () => {
-    console.log('override after:run');
-    await afterRunHook();
-  });
-};
 ```
 
 5. run cypress
@@ -87,15 +90,24 @@ module.exports = (on) => {
 
 If you want to customize your HTML report with [mochawesome-report-generator flags](https://github.com/adamgruber/mochawesome-report-generator#cli-flags) just add the flags you want to `reporterOptions`
 
-```
-{
-  "reporter": "cypress-mochawesome-reporter",
-  "reporterOptions": {
-    "reportDir": "cypress/report",
-    "charts": true,
-    "reportPageTitle": "custom-title"
-  }
-}
+```js
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'custom-title',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
+  },
+});
 ```
 
 Additional reporter options:
