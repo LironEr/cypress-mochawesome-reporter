@@ -10,7 +10,7 @@ describe('Report output with mochawesome flags', () => {
       });
 
       it('With charts', () => {
-        cy.get('.ct-chart').should('have.length', 5);
+        cy.get('.ct-chart').should('have.length', 6);
       });
 
       it('Custom page title', () => {
