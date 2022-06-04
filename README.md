@@ -27,62 +27,62 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
 
 1. install cypress-mochawesome-reporter
 
-```
-npm i --save-dev cypress-mochawesome-reporter
-```
+    ```
+    npm i --save-dev cypress-mochawesome-reporter
+    ```
 
-or
+    or
 
-```
-yarn add -D cypress-mochawesome-reporter
-```
+    ```
+    yarn add -D cypress-mochawesome-reporter
+    ```
 
 2. Change cypress reporter & setup hooks
 
-config file (`cypress.config.js` by default)
+    Edit config file (`cypress.config.js` by default)
 
-```js
-const { defineConfig } = require('cypress');
+    ```js
+    const { defineConfig } = require('cypress');
 
-module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
-  e2e: {
-    setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
-    },
-  },
-});
-```
+    module.exports = defineConfig({
+      reporter: 'cypress-mochawesome-reporter',
+      e2e: {
+        setupNodeEvents(on, config) {
+          require('cypress-mochawesome-reporter/plugin')(on);
+        },
+      },
+    });
+    ```
 
-If you are override `before:run` or `after:run` hooks, use this:
+    If you are override `before:run` or `after:run` hooks, use this:
 
-```js
-const { defineConfig } = require('cypress');
-const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+    ```js
+    const { defineConfig } = require('cypress');
+    const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 
-module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
-  e2e: {
-    setupNodeEvents(on, config) {
-      on('before:run', async (details) => {
-        console.log('override before:run');
-        await beforeRunHook(details);
-      });
+    module.exports = defineConfig({
+      reporter: 'cypress-mochawesome-reporter',
+      e2e: {
+        setupNodeEvents(on, config) {
+          on('before:run', async (details) => {
+            console.log('override before:run');
+            await beforeRunHook(details);
+          });
 
-      on('after:run', async () => {
-        console.log('override after:run');
-        await afterRunHook();
-      });
-    },
-  },
-});
-```
+          on('after:run', async () => {
+            console.log('override after:run');
+            await afterRunHook();
+          });
+        },
+      },
+    });
+    ```
 
 3. Add to `cypress/support/e2e.js`
 
-```javascript
-import 'cypress-mochawesome-reporter/register';
-```
+    ```javascript
+    import 'cypress-mochawesome-reporter/register';
+    ```
 
 5. run cypress
 
