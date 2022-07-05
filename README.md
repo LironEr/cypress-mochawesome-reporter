@@ -101,6 +101,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
+    reportFileName: 'index.html',
   },
   e2e: {
     setupNodeEvents(on, config) {
@@ -112,12 +113,13 @@ module.exports = defineConfig({
 
 Additional reporter options:
 
-| name                  | type      | default | description                                                                                                        |
-| --------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file |
-| `quiet`               | `boolean` | `false` | Silence console messages                                                                                           |
-| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
-| `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                   |
+| name                  | type      | default      | description                                                                                                        |
+| --------------------- | --------- | ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `embeddedScreenshots` | `boolean` | `false`      | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file |
+| `quiet`               | `boolean` | `false`      | Silence console messages                                                                                           |
+| `saveAllAttempts`     | `boolean` | `true`       | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
+| `debug`               | `boolean` | `false`      | Creates log file with debug data                                                                                   |
+| `reportFileName`      | `string`  | `index.html` | Defines report HTML file name for with test results                                                                |
 
 ## Examples
 
