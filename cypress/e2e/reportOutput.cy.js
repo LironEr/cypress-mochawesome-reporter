@@ -24,8 +24,8 @@ describe('Report output', () => {
           });
 
           it('fail during test', () => {
-            cy.validateTestHasScreenshot('fail test', folder === 'simple' ? 4 : 2);
-            cy.validateTestHasScreenshot('fail test hierarchy', folder === 'simple' ? 4 : 2);
+            cy.validateTestHasScreenshot('fail test #tag1', folder === 'simple' ? 4 : 2);
+            cy.validateTestHasScreenshot('fail test hierarchy #tag3', folder === 'simple' ? 4 : 2);
           });
 
           it('before hook', () => {
