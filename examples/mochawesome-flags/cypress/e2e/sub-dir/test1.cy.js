@@ -1,4 +1,4 @@
-it('fail test', () => {
+it('fail test #tag1', () => {
   cy.visit('site/index.html');
 
   cy.screenshot('custom-name');
@@ -6,7 +6,7 @@ it('fail test', () => {
   cy.get('#todo-list li').should('have.length', 10);
 });
 
-describe('Test 1', () => {
+describe('Test 1 #tag2', () => {
   it('default todos exists', () => {
     cy.visit('site/index.html');
 
@@ -16,7 +16,7 @@ describe('Test 1', () => {
   });
 
   describe('hierarchy', () => {
-    it('fail test hierarchy', () => {
+    it('fail test hierarchy #tag3', () => {
       cy.visit('site/index.html');
 
       cy.screenshot('custom-name2');
