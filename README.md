@@ -119,12 +119,19 @@ Additional reporter options:
 | `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
 | `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                   |
 
+## Adding to report
+
+Add extra information to the report manually by using `cy.addTestContext()` as seen in the [simple-typescript example test 2](/examples/simple-typescript/cypress/e2e/test2.cy.ts)
+
+<img src="./docs/assets/passed-test-with-addContext-screenshot.png" alt="Mochawesome report with fail test screenshot" width="50%" />
+
 ## Examples
 
 1. [Simple use of `cypress-mochawesome-reporter`](examples/simple)
 2. [Using `cypress-multi-reporters`](examples/multiple-reporters)
 3. [With `mochawesome-report-generator` flags](examples/mochawesome-flags)
 4. [Change default screenshots folder in `cypress.json`](examples/screenshots-folder)
+5. [Using `cypress-mochawesome-reporter` with typescript](examples/simple-typescript)
 
 Run `npm i` in root directory then:
 

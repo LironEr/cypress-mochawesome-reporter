@@ -1,0 +1,14 @@
+{
+  "name": "@example/simple",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "cypress run"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "cypress": "^10.0.2",
+    "cypress-mochawesome-reporter": "../../"
+  }
+}
