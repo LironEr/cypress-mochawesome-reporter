@@ -33,7 +33,7 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "devDependencies": {
-    "cypress": "^10.0.2",
+    "cypress": "^12.3.0",
     "lerna": "^5.6.1"
   },
   "peerDependencies": {
