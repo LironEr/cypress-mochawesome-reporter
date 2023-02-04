@@ -84,7 +84,7 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
     import 'cypress-mochawesome-reporter/register';
     ```
 
-5. run cypress
+4. run cypress
 
 ## Custom options
 
@@ -119,7 +119,7 @@ Additional reporter options:
 | `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
 | `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                   |
 
-## Adding to report
+## Add extra information to report
 
 Add extra information to the report manually by using `cy.addTestContext()` as seen in the [simple-typescript example test 2](/examples/simple-typescript/cypress/e2e/test2.cy.ts)
 
