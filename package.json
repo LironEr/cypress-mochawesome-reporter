@@ -12,6 +12,7 @@
     "url": "https://github.com/LironEr/cypress-mochawesome-reporter"
   },
   "main": "lib/reporter.js",
+  "types": "index.d.ts",
   "scripts": {
     "lerna": "lerna",
     "install-examples": "lerna exec --scope @example/* \"npm i\"",
@@ -42,6 +43,7 @@
   "files": [
     "lib",
     "register.js",
-    "plugin.js"
+    "plugin.js",
+    "index.d.ts"
   ]
 }

@@ -1,0 +1,17 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "node",
+      "cypress",
+      "cypress-mochawesome-reporter"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
