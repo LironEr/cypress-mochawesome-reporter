@@ -10,6 +10,16 @@ Cypress.Screenshot.defaults({
 });
 
 Cypress.on('test:after:run', (test) => {
+  if (Cypress.config('video')){
+    addContext(
+        { test },
+        {
+          title: 'cypress-mochawesome-reporter-videos',
+          value: Cypress.spec.relative
+        }
+    )
+  }
+  
   if (!Cypress.Mochawesome) {
     return;
   }
