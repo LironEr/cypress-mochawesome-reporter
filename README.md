@@ -27,62 +27,62 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
 
 1. install cypress-mochawesome-reporter
 
-    ```
-    npm i --save-dev cypress-mochawesome-reporter
-    ```
+   ```
+   npm i --save-dev cypress-mochawesome-reporter
+   ```
 
-    or
+   or
 
-    ```
-    yarn add -D cypress-mochawesome-reporter
-    ```
+   ```
+   yarn add -D cypress-mochawesome-reporter
+   ```
 
 2. Change cypress reporter & setup hooks
 
-    Edit config file (`cypress.config.js` by default)
+   Edit config file (`cypress.config.js` by default)
 
-    ```js
-    const { defineConfig } = require('cypress');
+   ```js
+   const { defineConfig } = require('cypress');
 
-    module.exports = defineConfig({
-      reporter: 'cypress-mochawesome-reporter',
-      e2e: {
-        setupNodeEvents(on, config) {
-          require('cypress-mochawesome-reporter/plugin')(on);
-        },
-      },
-    });
-    ```
+   module.exports = defineConfig({
+     reporter: 'cypress-mochawesome-reporter',
+     e2e: {
+       setupNodeEvents(on, config) {
+         require('cypress-mochawesome-reporter/plugin')(on);
+       },
+     },
+   });
+   ```
 
-    If you are override `before:run` or `after:run` hooks, use this:
+   If you are override `before:run` or `after:run` hooks, use this:
 
-    ```js
-    const { defineConfig } = require('cypress');
-    const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+   ```js
+   const { defineConfig } = require('cypress');
+   const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 
-    module.exports = defineConfig({
-      reporter: 'cypress-mochawesome-reporter',
-      e2e: {
-        setupNodeEvents(on, config) {
-          on('before:run', async (details) => {
-            console.log('override before:run');
-            await beforeRunHook(details);
-          });
+   module.exports = defineConfig({
+     reporter: 'cypress-mochawesome-reporter',
+     e2e: {
+       setupNodeEvents(on, config) {
+         on('before:run', async (details) => {
+           console.log('override before:run');
+           await beforeRunHook(details);
+         });
 
-          on('after:run', async () => {
-            console.log('override after:run');
-            await afterRunHook();
-          });
-        },
-      },
-    });
-    ```
+         on('after:run', async () => {
+           console.log('override after:run');
+           await afterRunHook();
+         });
+       },
+     },
+   });
+   ```
 
 3. Add to `cypress/support/e2e.js`
 
-    ```javascript
-    import 'cypress-mochawesome-reporter/register';
-    ```
+   ```javascript
+   import 'cypress-mochawesome-reporter/register';
+   ```
 
 4. run cypress
 
@@ -112,13 +112,13 @@ module.exports = defineConfig({
 
 Additional reporter options:
 
-| name                  | type      | default | description                                                                                                                                                                       |
-|-----------------------|-----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file                                                                |
-| `ignoreVideos`        | `boolean` | `false` | Will not copy videos recorded by Cypress nor show them in the mochawesome report. Requires that Cypress config option `video` is set to `true` for the option to have any effect |
-| `quiet`               | `boolean` | `false` | Silence console messages                                                                                                                                                          |
-| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                                                                               |
-| `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                                                                                  |
+| name                  | type      | default | description                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file                                                                                                                                                                                                                                                                              |
+| `ignoreVideos`        | `boolean` | `false` | Will not copy videos recorded by Cypress nor show them in the mochawesome report. Requires that Cypress config option `video` is set to `true` for the option to have any effect<br/>Because mochawesome doesn't support context per spec file, each test will have the whole spec file video. More info can be found [here](https://github.com/LironEr/cypress-mochawesome-reporter/issues/43) |
+| `quiet`               | `boolean` | `false` | Silence console messages                                                                                                                                                                                                                                                                                                                                                                        |
+| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                                                                                                                                                                                                                                                                                             |
+| `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                                                                                                                                                                                                                                                                                                |
 
 ## Add extra information to report
 
