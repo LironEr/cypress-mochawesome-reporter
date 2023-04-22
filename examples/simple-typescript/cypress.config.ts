@@ -2,7 +2,7 @@
 
 export default defineConfig({
     reporter: 'cypress-mochawesome-reporter',
-    video: false,
+    video: true,
     e2e: {
         setupNodeEvents(on, config) {
             require('cypress-mochawesome-reporter/plugin')(on);

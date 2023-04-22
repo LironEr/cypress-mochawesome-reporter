@@ -112,12 +112,13 @@ module.exports = defineConfig({
 
 Additional reporter options:
 
-| name                  | type      | default | description                                                                                                        |
-| --------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file |
-| `quiet`               | `boolean` | `false` | Silence console messages                                                                                           |
-| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                |
-| `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                   |
+| name                  | type      | default | description                                                                                                                                                                       |
+|-----------------------|-----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file                                                                |
+| `ignoreVideos`        | `boolean` | `false` | Will not copy videos recorded by Cypress nor show them in the mochawesome report. Requires that Cypress config option `video` is set to `true` for the option to have any effect |
+| `quiet`               | `boolean` | `false` | Silence console messages                                                                                                                                                          |
+| `saveAllAttempts`     | `boolean` | `true`  | Save screenshots of all test attempts, set to `false` to save only the last attempt                                                                                               |
+| `debug`               | `boolean` | `false` | Creates log file with debug data                                                                                                                                                  |
 
 ## Add extra information to report
 

@@ -54,3 +54,32 @@ describe('Report output', () => {
     });
   });
 });
+
+describe('Video output', () => {
+  ['simple', 'screenshots-folder', 'simple-typescript'].forEach((folder) => {
+    describe(`Validate video exists in ${folder} folder`, () => {
+      beforeEach(() => {
+        cy.visit(`examples/${folder}/cypress/reports/html/index.html`);
+      });
+      
+      it('before hook', () => {
+        cy.validateTestHasVideo('before hook fail')
+      })
+      
+      it('beforeEach', () => {
+        cy.validateTestHasVideo('beforeEach hook fail 1')
+      })
+
+      it('fail during test', () => {
+        cy.validateTestHasVideo('fail test #tag1')
+        cy.validateTestHasVideo('fail test hierarchy #tag3')
+      })
+
+      it('video on passed tests', () => {
+        cy.validateTestHasVideo('default todos exists')
+        cy.validateTestHasVideo('todo exists')
+        cy.validateTestHasVideo('add context to mochawesome report')
+      })
+    })
+  })
+})
