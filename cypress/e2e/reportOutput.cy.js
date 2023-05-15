@@ -74,12 +74,19 @@ describe('Video output', () => {
         cy.validateTestHasVideo('fail test #tag1')
         cy.validateTestHasVideo('fail test hierarchy #tag3')
       })
-
-      it('video on passed tests', () => {
-        cy.validateTestHasVideo('default todos exists')
-        cy.validateTestHasVideo('todo exists')
-        cy.validateTestHasVideo('add context to mochawesome report')
-      })
+      if (folder !== 'screenshots-folder') {
+        it('video on passed tests', () => {
+          cy.validateTestHasVideo('default todos exists')
+          cy.validateTestHasVideo('todo exists')
+          cy.validateTestHasVideo('add context to mochawesome report')
+        })
+      } else {
+        it('no video on passed tests', () => {
+          cy.validateTestHasNoVideo('default todos exists')
+          cy.validateTestHasNoVideo('todo exists')
+          cy.validateTestHasNoVideo('add context to mochawesome report')
+        })
+      }
     })
   })
 })

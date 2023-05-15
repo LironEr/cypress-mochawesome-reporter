@@ -26,7 +26,8 @@
     "mochawesome",
     "mocha",
     "reporter",
-    "screenshot"
+    "screenshot",
+    "video"
   ],
   "dependencies": {
     "fs-extra": "^10.0.1",

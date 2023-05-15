@@ -14,7 +14,7 @@ Cypress.on('test:after:run', (test) => {
     addContext(
         { test },
         {
-          title: 'cypress-mochawesome-reporter-videos',
+          title: 'cypress-mochawesome-reporter-videos-' + test.state,
           value: Cypress.spec.relative
         }
     )
