@@ -10,16 +10,16 @@ Cypress.Screenshot.defaults({
 });
 
 Cypress.on('test:after:run', (test) => {
-  if (Cypress.config('video')){
+  if (Cypress.config('video')) {
     addContext(
-        { test },
-        {
-          title: 'cypress-mochawesome-reporter-videos-' + test.state,
-          value: Cypress.spec.relative
-        }
-    )
+      { test },
+      {
+        title: 'cypress-mochawesome-reporter-videos-' + test.state,
+        value: Cypress.spec.relative,
+      }
+    );
   }
-  
+
   if (!Cypress.Mochawesome) {
     return;
   }
@@ -55,13 +55,11 @@ Cypress.Commands.add('addTestContext', (context) => {
 function saveScreenshotReference(details) {
   const normalizedScreenshotPath = details.path.replace(screenshotsFolder, '');
 
-  const title = normalizedScreenshotPath.includes('(failed)') ? 'Failed screenshot' : 'Screenshot';
-
   if (!Cypress.Mochawesome) {
     Cypress.Mochawesome = createMochawesomeObject();
   }
 
-  Cypress.Mochawesome.currentAttemptScreenshots.push({ title, value: normalizedScreenshotPath });
+  Cypress.Mochawesome.currentAttemptScreenshots.push(normalizedScreenshotPath);
 }
 
 function createMochawesomeObject() {
