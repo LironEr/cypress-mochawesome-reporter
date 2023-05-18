@@ -38,3 +38,13 @@ Cypress.Commands.add('validateTestHasVideo', (testTitle) => {
                 });
         });
 });
+Cypress.Commands.add('validateTestHasNoVideo', (testTitle) => {
+    cy.get(`[title="${testTitle}"]`)
+        .click()
+        .parents('li[class*="test--component"]')
+        .then(([$el]) => {
+            cy.wrap($el)
+                .find('video')
+                .should('not.exist')
+        });
+});
