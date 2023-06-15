@@ -18,10 +18,11 @@ describe('Report output', () => {
 
       it('Validate all tests exists', () => {
         cy.get('li[title="Suites"]').contains(4);
-        cy.get('li[title="Tests"]').contains(8);
+        cy.get('li[title="Tests"]').contains(9);
         cy.get('li[title="Passed"]').contains(2);
         cy.get('li[title="Failed"]').contains(4);
         cy.get('li[title="Skipped"]').contains(1);
+        cy.get('li[title="Pending"]').contains(1);
       });
 
       describe('Validate image exists', () => {
@@ -80,11 +81,17 @@ describe('Video output', () => {
           cy.validateTestHasVideo('todo exists')
           cy.validateTestHasVideo('add context to mochawesome report')
         })
+        it('video on skipped test', () => {
+          cy.validateTestHasVideo('skipped test')
+        })
       } else {
         it('no video on passed tests', () => {
           cy.validateTestHasNoVideo('default todos exists')
           cy.validateTestHasNoVideo('todo exists')
           cy.validateTestHasNoVideo('add context to mochawesome report')
+        })
+        it('no video on skipped tests', () => {
+          cy.validateTestHasNoVideo('skipped test')
         })
       }
     })

@@ -12,4 +12,8 @@ describe('Test 2', () => {
       cy.addTestContext(`There were ${$liElements.length.toString()} items found in the todo-list`);
     });
   });
+  
+  it.skip('skipped test', () => {
+    cy.visit('site/index.html');
+  });
 });
