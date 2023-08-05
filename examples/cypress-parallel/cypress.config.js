@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress');
 const { beforeRunHook } = require('cypress-mochawesome-reporter/lib');
 
 module.exports = defineConfig({
-  video: true,
+  video: false,
   retries: 0,
   e2e: {
     setupNodeEvents(on, config) {
