@@ -12,6 +12,7 @@
   "devDependencies": {
     "cypress": "^12.3.0",
     "cypress-mochawesome-reporter": "../../",
+    "cypress-multi-reporters": "^1.6.3",
     "cypress-parallel": "^0.13.0",
     "rimraf": "^5.0.1"
   }

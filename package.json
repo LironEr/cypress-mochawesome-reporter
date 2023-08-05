@@ -20,7 +20,7 @@
   "scripts": {
     "lerna": "lerna",
     "install-examples": "lerna exec --scope @example/* \"npm i\"",
-    "test:prepare": "lerna exec --stream --no-bail --concurrency 1 --scope @example/* \"npm run test\"",
+    "test:prepare": "lerna run --stream --no-bail --concurrency 1 --scope @example/* test",
     "test": "cypress run",
     "cypress:open": "cypress open"
   },
