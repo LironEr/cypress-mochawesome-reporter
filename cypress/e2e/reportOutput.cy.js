@@ -6,6 +6,7 @@ describe('Report output', () => {
     'mochawesome-flags',
     'screenshots-folder',
     'simple-typescript',
+    'cypress-parallel',
   ].forEach((folder) => {
     describe(`${folder} folder`, () => {
       beforeEach(() => {
@@ -57,7 +58,7 @@ describe('Report output', () => {
 });
 
 describe('Video output', () => {
-  ['simple', 'screenshots-folder', 'simple-typescript'].forEach((folder) => {
+  ['simple', 'screenshots-folder', 'simple-typescript', 'cypress-parallel'].forEach((folder) => {
     describe(`Validate video exists in ${folder} folder`, () => {
       beforeEach(() => {
         cy.visit(`examples/${folder}/cypress/reports/html/index.html`);
