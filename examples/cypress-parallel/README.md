@@ -2,7 +2,7 @@
 
 1. Follow the steps in the [main README](../../README.md) to setup the reporter.
 
-1. Change `cypress.config.js` to only use `beforeRunHook`, otherwise the reporter will try to create multiple HTML reporters without all the tests.
+1. Change `cypress.config.js` to **only** use `beforeRunHook`, otherwise the reporter will try to create multiple HTML reporters without all the tests.
 
    ```js
    const { defineConfig } = require('cypress');
@@ -21,11 +21,11 @@
    });
    ```
 
-1. How to run:
+1. run tests:
 
    1. Because cypress parallel runs in threads you will need to manually clear the report output folder before run.
 
-   1. Set `cypress-parallel` reporter to `cypress-mochawesome-reporter`
+   1. Set `cypress-parallel` reporter to `cypress-mochawesome-reporter` and set `cypressParallel=true` reporter option to make the reporter aware of `cypress-parallel`.
 
       ```sh
       cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/**/*.cy.js' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'"
