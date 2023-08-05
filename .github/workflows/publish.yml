@@ -17,6 +17,7 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm publish --provenance --access public
+      - run: npm publish --provenance --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          RELEASE_TAG: ${{ github.event.release.prerelease == true && 'next' || 'latest' }}
