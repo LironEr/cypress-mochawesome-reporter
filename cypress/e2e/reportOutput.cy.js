@@ -6,6 +6,7 @@ describe('Report output', () => {
     'mochawesome-flags',
     'screenshots-folder',
     'simple-typescript',
+    'cypress-parallel',
   ].forEach((folder) => {
     describe(`${folder} folder`, () => {
       beforeEach(() => {

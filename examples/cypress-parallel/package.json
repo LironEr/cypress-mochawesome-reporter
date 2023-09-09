@@ -1,0 +1,19 @@
+{
+  "name": "@example/cypress-parallel",
+  "version": "1.0.0",
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:run:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/**/*.cy.js' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
+    "clean": "rimraf cypress/reports",
+    "generate-report": "generate-mochawesome-report",
+    "test": "npm run clean && npm run cy:run:parallel || true && npm run generate-report"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.3.0",
+    "cypress-mochawesome-reporter": "../../",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-parallel": "^0.13.0",
+    "rimraf": "^5.0.1"
+  }
+}

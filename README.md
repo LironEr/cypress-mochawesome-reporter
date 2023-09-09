@@ -134,6 +134,7 @@ Add extra information to the report manually by using `cy.addTestContext()` as s
 3. [With `mochawesome-report-generator` flags](examples/mochawesome-flags)
 4. [Change default screenshots folder in `cypress.json`](examples/screenshots-folder)
 5. [Using `cypress-mochawesome-reporter` with typescript](examples/simple-typescript)
+6. [Using `cypress-mochawesome-reporter` with `cypress-parallel`](examples/cypress-parallel)
 
 Run `npm i` in root directory then:
 
