@@ -34,8 +34,10 @@
    1. Create report after test run:
 
       ```sh
-      npx generate-mochawesome-report
+      npx generate-mochawesome-report --set-exit-code
       ```
+
+      > `--set-exit-code` will set the exit code to the number of failed tests, as Cypress does. If you dont want this behavior, you can remove the flag or set `--set-exit-code false`.
 
    Example scripts section in `package.json`:
 
@@ -44,7 +46,7 @@
      "cy:run": "cypress run",
      "cy:run:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/**/*.cy.js' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
      "clean": "rimraf cypress/reports",
-     "generate-report": "generate-mochawesome-report",
+     "generate-report": "generate-mochawesome-report --set-exit-code",
      "test": "npm run clean && npm run cy:run:parallel || true && npm run generate-report"
    },
    ```
