@@ -1,0 +1,16 @@
+{
+  "name": "@example/simple-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "cypress run"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "cypress": "^13.1.0",
+    "cypress-mochawesome-reporter": "../../"
+  }
+}

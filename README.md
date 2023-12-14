@@ -78,6 +78,14 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
    });
    ```
 
+   If your are using `cypress-cucumber-preprocessor`, when calling to `addCucumberPreprocessorPlugin` omit before & after handlers:
+
+   ```js
+   await addCucumberPreprocessorPlugin(on, config, { omitBeforeRunHandler: true, omitAfterRunHandler: true });
+   ```
+
+   > Full example of using `cypress-mochawesome-reporter` with `cypress-cucumber-preprocessor` can be found [here](examples/cucumber-preprocessor).
+
 3. Add to `cypress/support/e2e.js`
 
    ```javascript
@@ -119,7 +127,7 @@ module.exports = defineConfig({
 Additional reporter options:
 
 | name                  | type      | default | description                                                                                                                                                                                                                                                                                                                                                                                     |
-|-----------------------| --------- | ------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `embeddedScreenshots` | `boolean` | `false` | Embedded external screenshots into HTML using base64, use with `inlineAssets` option to produce a single HTML file                                                                                                                                                                                                                                                                              |
 | `ignoreVideos`        | `boolean` | `false` | Will not copy videos recorded by Cypress nor show them in the mochawesome report. Requires that Cypress config option `video` is set to `true` for the option to have any effect<br/>Because mochawesome doesn't support context per spec file, each test will have the whole spec file video. More info can be found [here](https://github.com/LironEr/cypress-mochawesome-reporter/issues/43) |
 | `videoOnFailOnly`     | `boolean` | `false` | If Videos are recorded and added to the report, setting this to `true` will add the videos only to tests with failures.<br/>Do not that this will NOT cause video's to only record failed tests, just they not be added to passed tests in the mochawesome report                                                                                                                               |
@@ -141,6 +149,7 @@ Add extra information to the report manually by using `cy.addTestContext()` as s
 4. [Change default screenshots folder in `cypress.json`](examples/screenshots-folder)
 5. [Using `cypress-mochawesome-reporter` with typescript](examples/simple-typescript)
 6. [Using `cypress-mochawesome-reporter` with `cypress-parallel`](examples/cypress-parallel)
+7. [Using `cypress-mochawesome-reporter` with `cypress-cucumber-preprocessor`](examples/cucumber-preprocessor)
 
 Run `npm i` in root directory then:
 
