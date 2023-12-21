@@ -90,6 +90,8 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
    import 'cypress-mochawesome-reporter/cucumberSupport';
    ```
 
+   > ⚠️ `cypress-cucumber-preprocessor` uses the same hooks as `cypress-mochawesome-reporter`, you also need to install [cypress-on-fix](https://github.com/bahmutov/cypress-on-fix).
+
 5. run cypress
 
 ## Custom options
