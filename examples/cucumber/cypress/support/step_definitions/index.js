@@ -8,3 +8,7 @@ When(`I visit {string}`, (url) => {
 Then(`The list has {int} items`, (nb) => {
     cy.get('#todo-list li').should('have.length', nb);
 });
+
+Then(`The list has more than {int} items`, (nb) => {
+    cy.get('#todo-list li').should('have.length.greaterThan', nb);
+});
