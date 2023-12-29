@@ -40,6 +40,8 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^13.1.0",
     "lerna": "^7.1.4"
   },
