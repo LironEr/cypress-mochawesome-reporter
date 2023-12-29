@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [14.19.0]
+        node_version: [20.10.0]
     container: cypress/base:${{ matrix.node_version }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm ci
