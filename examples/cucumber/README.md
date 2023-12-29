@@ -1,5 +1,7 @@
 # Setup with `cypress-cucumber-preprocessor`
 
+> ⚠️ `@badeball/cypress-cucumber-preprocessor` require node >= 18
+
 1. Follow the steps in the [main README](../../README.md) to setup the reporter.
 
 1. Your `cypress.config.js` file should look like:
