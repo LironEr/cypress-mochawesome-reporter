@@ -19,7 +19,7 @@
   },
   "scripts": {
     "lerna": "lerna",
-    "install-examples": "lerna exec --scope @example/* \"npm i\"",
+    "install-examples": "lerna exec --concurrency 1 --scope @example/* \"npm i\"",
     "test:prepare": "lerna run --stream --no-bail --concurrency 1 --scope @example/* test",
     "test": "cypress run",
     "cypress:open": "cypress open"
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.2.0",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^13.1.0",
     "lerna": "^7.1.4"
   },
@@ -52,6 +51,7 @@
     "lib",
     "register.js",
     "plugin.js",
-    "index.d.ts"
+    "index.d.ts",
+    "cucumberSupport.js"
   ]
 }
