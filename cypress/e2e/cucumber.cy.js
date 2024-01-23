@@ -29,9 +29,10 @@ describe(`cucumber folder`, () => {
         'pass',
         `
 Feature: Test 1
+  Background:
+    When I visit "site/index.html"
 
   Scenario: pass
-    When I visit "site/index.html"
     Then The list has 4 items
 `
       );
@@ -42,9 +43,10 @@ Feature: Test 1
         'fail',
         `
 Feature: Test 1
+  Background:
+    When I visit "site/index.html"
 
   Scenario: fail
-    When I visit "site/index.html"
     Then The list has 5 items
 `
       );
@@ -55,9 +57,10 @@ Feature: Test 1
         'pass with examples (example #1)',
         `
 Feature: Test 1
+  Background:
+    When I visit "site/index.html"
 
   Scenario Outline: pass with examples
-    When I visit "site/index.html"
     Then The list has more than <num> items
 
     Examples: 
@@ -72,9 +75,10 @@ Feature: Test 1
         'pass with examples (example #2)',
         `
 Feature: Test 1
+  Background:
+    When I visit "site/index.html"
 
   Scenario Outline: pass with examples
-    When I visit "site/index.html"
     Then The list has more than <num> items
 
     Examples: 
@@ -89,9 +93,10 @@ Feature: Test 1
         'pass with examples (example #3)',
         `
 Feature: Test 1
+  Background:
+    When I visit "site/index.html"
 
   Scenario Outline: pass with examples
-    When I visit "site/index.html"
     Then The list has more than <num> items
 
     Examples: 
