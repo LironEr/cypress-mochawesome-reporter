@@ -11,12 +11,12 @@ Before(({ pickle, gherkinDocument }) => {
         feature: {
             ...gherkinDocument.feature,
             // keep only the scenario corresponding to the current pickle
-            children: gherkinDocument.feature.children.filter(f => f.scenario?.id === pickle.astNodeIds[0]),
+            children: gherkinDocument.feature.children.filter(f => !f.scenario || f.scenario.id === pickle.astNodeIds[0]),
         },
     }));
 
     // for scenario outlines, only keep the corresponding example
-    const scenario = gherkinDocumentWithSingleScenario.feature.children[0].scenario;
+    const scenario = gherkinDocumentWithSingleScenario.feature.children.filter(f => f.scenario)[0]?.scenario;
     if (scenario.examples.length) {
         const example = scenario.examples[0];
         example.tableBody = example.tableBody.filter(row => row.id === pickle.astNodeIds[1]);
