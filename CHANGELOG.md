@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.1](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.0...v3.8.1) (2024-01-26)
+
+
+### Bug Fixes
+
+* missing "Background" in Cucumber steps ([#178](https://github.com/LironEr/cypress-mochawesome-reporter/issues/178)) ([51e3a81](https://github.com/LironEr/cypress-mochawesome-reporter/commit/51e3a81c5e783b4f3e4224a34c541b8859dd7cce))
+
 ## [3.8.0](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.7.0...v3.8.0) (2023-12-29)
 
 
