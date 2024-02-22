@@ -20,7 +20,7 @@ Before(({ pickle, gherkinDocument }) => {
   // for scenario outlines, only keep the corresponding example
   const scenario = gherkinDocumentWithSingleScenario.feature.children.filter((f) => f.scenario)[0]?.scenario;
 
-  if (scenario && scenario.examples && scenario.examples.length > 0) {
+  if (scenario?.examples?.length) {
     const example = scenario.examples[0];
     example.tableBody = example.tableBody.filter((row) => row.id === pickle.astNodeIds[1]);
   }
