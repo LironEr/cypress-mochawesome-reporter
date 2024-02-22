@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.2](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.1...v3.8.2) (2024-02-22)
+
+
+### Bug Fixes
+
+* cucumberSupport fail if there is no examples in scenario ([#183](https://github.com/LironEr/cypress-mochawesome-reporter/issues/183)) ([633da67](https://github.com/LironEr/cypress-mochawesome-reporter/commit/633da67f765653e36a2008cd7fcf5da6f41cade2))
+
 ## [3.8.1](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.0...v3.8.1) (2024-01-26)
 
 
