@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.8.3](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.2...v3.8.3) (2024-05-10)
+
+
+### Bug Fixes
+
+* add description for saveJson parameter ([1a66676](https://github.com/LironEr/cypress-mochawesome-reporter/commit/1a666768c89c9981c7647125ef2e45e69ae1d75d))
+* **readme:** add description for saveJson parameter ([#194](https://github.com/LironEr/cypress-mochawesome-reporter/issues/194)) ([1a66676](https://github.com/LironEr/cypress-mochawesome-reporter/commit/1a666768c89c9981c7647125ef2e45e69ae1d75d))
+
 ## [3.8.2](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.1...v3.8.2) (2024-02-22)
 
 
