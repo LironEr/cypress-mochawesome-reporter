@@ -9,7 +9,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^13.1.0",
+    "cypress": "^14.5.1",
     "cypress-on-fix": "^1.0.2",
     "cypress-mochawesome-reporter": "../../"
   }
