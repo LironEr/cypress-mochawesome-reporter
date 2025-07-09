@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [20.18.0, 22.17.0]
+        node_version: [22.17.0]
     container: cypress/base:${{ matrix.node_version }}
     steps:
       - uses: actions/checkout@v4
