@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.4...v4.0.0) (2025-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade mochawesome-merge, supports node >= 22 ([#223](https://github.com/LironEr/cypress-mochawesome-reporter/issues/223))
+
+### Miscellaneous Chores
+
+* upgrade mochawesome-merge, supports node &gt;= 22 ([#223](https://github.com/LironEr/cypress-mochawesome-reporter/issues/223)) ([386cbb3](https://github.com/LironEr/cypress-mochawesome-reporter/commit/386cbb351d1e9abf3c144487facfce29a4f1355b))
+
 ## [3.8.4](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.3...v3.8.4) (2025-07-09)
 
 
