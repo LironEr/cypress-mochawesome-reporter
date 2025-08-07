@@ -1,6 +1,6 @@
 {
   "name": "cypress-mochawesome-reporter-v2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Zero config Mochawesome reporter for Cypress with screenshots",
   "engines": {
     "node": ">=22"
