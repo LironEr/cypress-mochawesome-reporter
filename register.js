@@ -3,9 +3,27 @@ const addContext = require('mochawesome/addContext');
 
 const screenshotsFolder = Cypress.config('screenshotsFolder');
 
+// Determine reporter option addScreenshotToHTML (default: true)
+function resolveAddScreenshotToHTML() {
+  const reporterOptions = Cypress.config('reporterOptions') || {};
+  const multi = reporterOptions.reporterEnabled && reporterOptions.cypressMochawesomeReporterReporterOptions;
+  const opts = multi ? reporterOptions.cypressMochawesomeReporterReporterOptions : reporterOptions;
+  const val = opts && Object.prototype.hasOwnProperty.call(opts, 'addScreenshotToHTML')
+    ? opts.addScreenshotToHTML
+    : undefined;
+  return val === undefined ? true : Boolean(val);
+}
+
+const ADD_SCREENSHOT_TO_HTML = resolveAddScreenshotToHTML();
+// Log the config so it is visible in the test runner console
+// eslint-disable-next-line no-console
+console.log('[cypress-mochawesome-reporter] addScreenshotToHTML:', ADD_SCREENSHOT_TO_HTML);
+
 Cypress.Screenshot.defaults({
   onAfterScreenshot(_el, details) {
-    saveScreenshotReference(details);
+    if (ADD_SCREENSHOT_TO_HTML) {
+      saveScreenshotReference(details);
+    }
   },
 });
 
@@ -28,13 +46,15 @@ Cypress.on('test:after:run', (test) => {
   Cypress.Mochawesome.currentAttemptScreenshots = [];
 
   if (test.final) {
-    addContext(
-      { test },
-      {
-        title: 'cypress-mochawesome-reporter-screenshots',
-        value: Cypress.Mochawesome.attempts,
-      }
-    );
+    if (ADD_SCREENSHOT_TO_HTML) {
+      addContext(
+        { test },
+        {
+          title: 'cypress-mochawesome-reporter-screenshots',
+          value: Cypress.Mochawesome.attempts,
+        }
+      );
+    }
 
     Cypress.Mochawesome.context.forEach((ctx) => {
       addContext({ test }, ctx);
