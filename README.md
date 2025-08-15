@@ -4,6 +4,8 @@
 This is a fork of [cypress-mochawesome-reporter](https://github.com/LironEr/cypress-mochawesome-reporter)
 the only difference in this version is the current fix to support not thowing an error when running Cypress
 tests in parallel for non json reports found when generating the report
+On this fork I've also add a new config option called addScreenshotToHTML which we can pass
+to reporterOptions as false value to not add the screenshots when we are already adding in some different way
 
 [![npm](https://img.shields.io/npm/v/cypress-mochawesome-reporter)](http://www.npmjs.com/package/cypress-mochawesome-reporter)
 [![node](https://img.shields.io/node/v/cypress-mochawesome-reporter.svg)](https://github.com/LironEr/cypress-mochawesome-reporter)
