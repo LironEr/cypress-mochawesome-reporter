@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.0...v4.0.1) (2025-08-20)
+
+
+### Bug Fixes
+
+* Revert "fix: Generating reports with empty tests ([#218](https://github.com/LironEr/cypress-mochawesome-reporter/issues/218))" ([#230](https://github.com/LironEr/cypress-mochawesome-reporter/issues/230)) ([8770ad6](https://github.com/LironEr/cypress-mochawesome-reporter/commit/8770ad6ee6652a7ed23b4a042dc70bd535be4f41))
+
 ## [4.0.0](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.4...v4.0.0) (2025-07-09)
 
 
