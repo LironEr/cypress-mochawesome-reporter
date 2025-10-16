@@ -19,8 +19,7 @@
     "install-examples": "lerna exec --concurrency 1 --scope @example/* \"npm i\"",
     "test:prepare": "lerna run --stream --no-bail --concurrency 1 --scope @example/* test",
     "test": "cypress run",
-    "cypress:open": "cypress open",
-    "postinstall": "patch-package || true"
+    "cypress:open": "cypress open"
   },
   "keywords": [
     "cypress",
@@ -41,9 +40,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^22.2.0",
     "cypress": "^14.5.1",
     "glob": "^11.0.3",
-    "lerna": "^9.0.0",
-    "patch-package": "^8.0.0",
-    "postinstall-postinstall": "^2.1.0"
+    "lerna": "^9.0.0"
   },
   "peerDependencies": {
     "cypress": ">=6.2.0"
