@@ -1,6 +1,6 @@
 {
   "name": "cypress-mochawesome-reporter-v2",
-  "version": "1.0.14",
+  "version": "1.0.0",
   "description": "Zero config Mochawesome reporter for Cypress with screenshots",
   "author": "Caíque Coelho",
   "license": "MIT",
