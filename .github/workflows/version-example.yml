@@ -1,0 +1,36 @@
+# This is an example workflow showing how to read version from package.json
+# You can use this pattern in any workflow that needs the version
+name: Version Example
+
+on:
+  workflow_dispatch:  # Manual trigger for demonstration
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.package-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Get version from package.json
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Current version: $VERSION"
+      
+      - name: Use the version
+        run: |
+          echo "Creating release for version v${{ steps.package-version.outputs.version }}"
+          echo "Tag will be: v${{ steps.package-version.outputs.version }}"
+          echo "Title will be: Release v${{ steps.package-version.outputs.version }}"
+  
+  use-version:
+    needs: get-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use version in another job
+        run: |
+          echo "Version from previous job: ${{ needs.get-version.outputs.version }}"
+

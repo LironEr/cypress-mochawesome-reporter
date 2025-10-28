@@ -8,10 +8,15 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      version: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -20,4 +25,35 @@ jobs:
           release-type: node
           # Optional: customize the package name
           package-name: cypress-mochawesome-reporter-v2
+      
+      # Show release information (optional - for debugging)
+      - name: Show Release Info
+        if: steps.release.outputs.release_created
+        run: |
+          echo "Release created: ${{ steps.release.outputs.release_created }}"
+          echo "Tag name: ${{ steps.release.outputs.tag_name }}"
+          echo "Version: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
+          echo "Release URL: ${{ steps.release.outputs.html_url }}"
+      
+      # Publish to npm immediately after release is created
+      - name: Checkout code
+        if: steps.release.outputs.release_created
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        if: steps.release.outputs.release_created
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install dependencies
+        if: steps.release.outputs.release_created
+        run: npm ci
+      
+      - name: Publish to npm
+        if: steps.release.outputs.release_created
+        run: npm publish --provenance --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

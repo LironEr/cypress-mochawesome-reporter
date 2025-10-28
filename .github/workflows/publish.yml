@@ -19,6 +19,13 @@ jobs:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Display release info
+        run: |
+          echo "Release name: ${{ github.event.release.name }}"
+          echo "Release tag: ${{ github.event.release.tag_name }}"
+          echo "Is prerelease: ${{ github.event.release.prerelease }}"
+          echo "Publishing with tag: ${{ github.event.release.prerelease == true && 'next' || 'latest' }}"
+
       - run: npm ci
       
       - run: npm publish --provenance --access public --tag ${{ env.RELEASE_TAG }}
