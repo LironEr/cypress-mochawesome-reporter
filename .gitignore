@@ -9,3 +9,4 @@ cypress/reports
 cypress/results
 cypress/screenshots
 cypress/videos
+.npmrc
