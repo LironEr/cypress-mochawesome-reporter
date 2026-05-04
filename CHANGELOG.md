@@ -1,5 +1,37 @@
 # Changelog
 
+## [4.0.2](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.1...v4.0.2) (2025-08-21)
+
+
+### Bug Fixes
+
+* Generating reports with empty tests ([#233](https://github.com/LironEr/cypress-mochawesome-reporter/issues/233)) ([1648c76](https://github.com/LironEr/cypress-mochawesome-reporter/commit/1648c76f31c550d3162d0322677e88d6d28ee17e)), closes [#217](https://github.com/LironEr/cypress-mochawesome-reporter/issues/217)
+
+## [4.0.1](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.0...v4.0.1) (2025-08-20)
+
+
+### Bug Fixes
+
+* Revert "fix: Generating reports with empty tests ([#218](https://github.com/LironEr/cypress-mochawesome-reporter/issues/218))" ([#230](https://github.com/LironEr/cypress-mochawesome-reporter/issues/230)) ([8770ad6](https://github.com/LironEr/cypress-mochawesome-reporter/commit/8770ad6ee6652a7ed23b4a042dc70bd535be4f41))
+
+## [4.0.0](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.4...v4.0.0) (2025-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade mochawesome-merge, supports node >= 22 ([#223](https://github.com/LironEr/cypress-mochawesome-reporter/issues/223))
+
+### Miscellaneous Chores
+
+* upgrade mochawesome-merge, supports node &gt;= 22 ([#223](https://github.com/LironEr/cypress-mochawesome-reporter/issues/223)) ([386cbb3](https://github.com/LironEr/cypress-mochawesome-reporter/commit/386cbb351d1e9abf3c144487facfce29a4f1355b))
+
+## [3.8.4](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.3...v3.8.4) (2025-07-09)
+
+
+### Bug Fixes
+
+* Generating reports with empty tests ([#218](https://github.com/LironEr/cypress-mochawesome-reporter/issues/218)) ([c6c5c66](https://github.com/LironEr/cypress-mochawesome-reporter/commit/c6c5c6610fbb76ec788847d51da367ca65a8cae2))
+
 ## [3.8.3](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v3.8.2...v3.8.3) (2024-05-10)
 
 

@@ -32,6 +32,16 @@ Cypress.Commands.add('validateTestHasVideo', (testTitle) => {
             .should('have.length', 1)
             .each(([$vid]) => {
               cy.wrap($vid).should('be.visible').find('source').should('have.attr', 'type', 'video/mp4');
+              cy.wrap($vid)
+                .should('be.visible')
+                .then(($video) => {
+                  // Try to play
+                  return $video.play().then(() => {
+                    // Assert video is not paused anymore
+                    expect($video.paused, 'video is playing').to.be.false;
+                    expect($video.readyState, 'video has enough data to play').to.be.greaterThan(2); // HAVE_FUTURE_DATA
+                  });
+                });
             });
         });
     });
