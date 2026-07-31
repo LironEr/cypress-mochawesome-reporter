@@ -13,15 +13,14 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22.x'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm ci
-      
+
       - run: npm publish --provenance --access public --tag ${{ env.RELEASE_TAG }}
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           RELEASE_TAG: ${{ github.event.release.prerelease == true && 'next' || 'latest' }}
