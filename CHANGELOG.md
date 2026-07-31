@@ -9,6 +9,7 @@
 
 ### deps
 
+* Remove mochawesome-merge dependency ([#243](https://github.com/LironEr/cypress-mochawesome-reporter/issues/243)) ([e43b7ea](https://github.com/LironEr/cypress-mochawesome-reporter/commit/e43b7eadd006fe7cbb1b456c4ae7fc4aa2455be4))
 * update mochawesome to v8 ([#249](https://github.com/LironEr/cypress-mochawesome-reporter/issues/249)) ([6c89672](https://github.com/LironEr/cypress-mochawesome-reporter/commit/6c89672f3488bf897c38d7c17f7518720ab55022))
 
 ## [4.0.2](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.1...v4.0.2) (2025-08-21)
