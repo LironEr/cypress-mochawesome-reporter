@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.2...v5.0.0) (2026-07-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* update mochawesome to v8 ([#249](https://github.com/LironEr/cypress-mochawesome-reporter/issues/249))
+
+### deps
+
+* update mochawesome to v8 ([#249](https://github.com/LironEr/cypress-mochawesome-reporter/issues/249)) ([6c89672](https://github.com/LironEr/cypress-mochawesome-reporter/commit/6c89672f3488bf897c38d7c17f7518720ab55022))
+
 ## [4.0.2](https://github.com/LironEr/cypress-mochawesome-reporter/compare/v4.0.1...v4.0.2) (2025-08-21)
 
 
