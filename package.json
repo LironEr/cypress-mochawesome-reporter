@@ -41,7 +41,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^26.0.0",
     "cypress": "^15.19.0",
-    "lerna": "^9.0.7"
+    "lerna": "^10.0.0"
   },
   "peerDependencies": {
     "cypress": ">=6.2.0"
