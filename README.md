@@ -15,7 +15,8 @@ Zero config Mochawesome reporter for Cypress with screenshots attached to tests.
 
 | reporter version | cypress version                                                               | reporter branch                                                         |
 | ---------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `v4`             | node >= 22<br/>>= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | `main`                                                                  |
+| `v5`             | node >= 22<br/>>= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | `main`                                                                  |
+| `v4`             | node >= 22<br/>>= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | [`v4`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v4) |
 | `v3`             | node >= 14<br/>>= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true` | [`v3`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v3) |
 | `v2`             | >= `6.7.0` <br />>= `6.2.0` with `experimentalRunEvents: true`                | [`v2`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v2) |
 | `v1`             | >= `4.0.0`                                                                    | [`v1`](https://github.com/LironEr/cypress-mochawesome-reporter/tree/v1) |
